@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'>
+    <style>
+    @media (min-width: 858px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 780px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 702px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 724px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 623px) {
+    html {
+        font-size: 8px;
+    }
+}
+      body{
+        background: #d9a7c7;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                  
+      }
+      p {
+        text-align: center;
+        font-size: 2em;
+        margin-top: 0px;
+        font-family: 'Kaushan Script';
+      }
+
+      .contador{
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color: #4DD0E1;
+        padding: 0.5em;
+        margin: 0.5em;
+        border-radius: 0.5em;
+        text-align: center;
+        height: 9em;
+        width: 9em;
+      }
+
+      .smalltext{
+        text-align: center;
+        font-size: 4.5em;
+      }
+      .titulo{
+        color: white;
+        font-size: 1.3em;
+        margin-top: 2em;
+      }
+      #demo{
+        color: black;
+      }
+    </style>
+  </head>
+<body class="container">
+<div class="titulo">
+  <p id="demo"><b>Cuenta regresiva para comer rameeeeen!</b></p>
+</div>
+<div class="row" id="clockdiv" style="display:flex; justify-content: center">
+  <div class="contador">
+    <span class="titulo"><b>Días</b></span>
+    <div id="d" class="smalltext"></div>
+  </div>
+  <div class="contador">
+    <span class="titulo"><b>Horas</b></span>
+    <div id="h" class="smalltext"></div>
+  </div>
+  <div class="contador">
+    <span class="titulo"><b>Minutos</b></span>
+    <div id="m" class="smalltext"></div>
+  </div>
+  <div class="contador">
+    <span class="titulo"><b>Segundos</b></span>
+    <div id="s" class="smalltext"></div>
+  </div>
+
+</div>
+  <div  id="imagen" style="text-align:center; display:none">
+    <img style="width:21em" src="https://data.whicdn.com/images/64818962/large.png">
+  </div>
+  <div  id="imagen2" style="text-align:center; ">
+    <img style="width:16em" src="
+  https://vignette.wikia.nocookie.net/fairytail/images/2/20/Natsu_and_Happy.png/revision/latest?cb=20120209143935">
+  </div>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 14, 2018 12:00:00").getTime();
+//var countDownDate = new Date("Sep 9, 2018 15:00:00").getTime();
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    //document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    //+ minutes + "m " + seconds + "s ";
+    document.getElementById("d").innerHTML = days;
+    document.getElementById("h").innerHTML = hours;
+    document.getElementById("m").innerHTML = minutes;
+    document.getElementById("s").innerHTML = seconds;
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("clockdiv").style.display = "none";
+        document.getElementById("imagen2").style.display = "none";
+        document.getElementById("demo").innerHTML = "<b>Es hora de comer rameeen! <p>それでは</p></b>";
+        document.getElementById("imagen").style.display = "block";
+    }
+}, 1000);
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
